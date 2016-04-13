@@ -26,14 +26,14 @@ function getPlayerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
     return move || getInput();
-}
+};
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
     return move || randomPlay();
-}
+};
 
 function getWinner(playerMove,computerMove) {
     var winner;
@@ -63,7 +63,7 @@ function getWinner(playerMove,computerMove) {
         }
     }
     return winner;
-}
+};
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
@@ -71,15 +71,29 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while (playerWins < 5 && computerWins < 5) {
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+        var currentRoundWin = getWinner(playerMove, computerMove);
+        if (currentRoundWin === 'player') {
+            playerWins++;
+        }
+        else if (currentRoundWin === 'computer') {
+            computerWins++;
+        }
+        else {
+            console.log('That round was a tie; no points!');
+        }
+        console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+        console.log('The score is currently Player: ' + playerWins + ', Computer: ' + computerWins + '\n');
+    }
     return [playerWins, computerWins];
-}
-
+};
 
 
 ////////////////////////////////////////////////////////////
+//*unit test getWinner() function
 // console.log('the winner is ' + getWinner('paper', 'rock'));
 // console.log('the winner is ' + getWinner('paper', 'paper'));
 // console.log('the winner is ' + getWinner('scissors', 'rock'));
-
-
 

@@ -19,7 +19,7 @@ function getWinner(playerMove,computerMove) {
         winner = possibleResults[playerMove + "," + computerMove];
     }
     return winner;
-}
+};
 
 console.log('the winner is ' + getWinner('paper', 'rock'));
 console.log('the winner is ' + getWinner('paper', 'paper'));

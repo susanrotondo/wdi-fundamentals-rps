@@ -96,7 +96,7 @@ function playToFive() {
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     while (playerWins < 5 && computerWins < 5) {
-        var playerMove = getPlayerMove();
+        var playerMove = getPlayerMove().toLowerCase();
         if (playerMove !== 'rock' && playerMove !== 'paper' && playerMove !== 'scissors') {
             console.log('That was not a valid entry!');
             continue;
@@ -125,7 +125,7 @@ function playTo(x) {
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     while (playerWins < x && computerWins < x) {
-        var playerMove = getPlayerMove();
+        var playerMove = getPlayerMove().toLowerCase();
         if (playerMove !== 'rock' && playerMove !== 'paper' && playerMove !== 'scissors') {
             console.log('That was not a valid entry!');
             continue;
